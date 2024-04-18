@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    --clr-lightGreen: #D9EDBF;
+    --clr-darkGreen: #2C7865;
+    --clr-green: #90D26D;
+    --clr-orange: #FF9800;
+}
+
+body {
+    
+    height: 100%;
+    
+    display: flex;
+}
+
+.settings-section {
+    flex: 1;
+    
+    background-color: var(--clr-darkGreen);
+}
+
+.chat-section {
+    flex: 2;
+    
+    background-color: var(--clr-orange);
+    
+    position: relative;
+}
+
+.chat-section input {
+    width: 100%;
+    height: 3rem;
+    padding: 5px;
+    border-radius: 0.5rem;
+    
+    position: absolute;
+    bottom: 0;
+}
+
+.history-section {
+    flex: 1;
+    
+    background-color: var(--clr-lightGreen);
+}
