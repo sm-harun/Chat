@@ -9,10 +9,6 @@
     --clr-orange: #FF9800;
 }
 
-html {
-    height: 100%;
-}
-
 body {
     height: 100%;
     
@@ -24,6 +20,8 @@ body {
 .settings-section {
     flex: 1;
     
+    height: 100%;
+    
     background-color: var(--clr-lightGreen);
 }
 
@@ -31,6 +29,7 @@ body {
     flex: 2;
     position: relative;
     
+    height: 100%;
     
     display: flex;
     flex-direction: column;
@@ -105,6 +104,8 @@ body {
     flex: 1;
     
     padding: 2rem;
+    
+    height: 100%;
     
     display: flex;
     flex-direction: column;
