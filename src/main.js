@@ -1,3 +1,6 @@
+let allChats = [[], [], [], [], [], [], [], [], [], [], [], []];
+let amountOfChats = 0;
+
 function sendPrompt() {
     
     const input = document.getElementById('prompt');
@@ -8,13 +11,23 @@ function sendPrompt() {
     
     message.textContent = input.value;
     chatArea.appendChild(message);
-    
-    message.style.opacity = '1';
-    message.style.transform = 'translateY(0)';
 }
 
 function resetChat() {
-    let messages = document.querySelectorAll("message");
     
-    messages.forEach(message => message.remove());
+    let chatHistoryArea = document.getElementsByClassName("chat-history")[0];
+    let messages = document.querySelectorAll(".message");
+    let firstMessage = messages[0].textContent;
+    
+    for (let i = 0; i < messages.length; i++) {
+        allChats[amountOfChats][i] = messages[i];
+        messages[i].remove();
+    }
+    
+    let chatHistoryButton = document.createElement("button");
+    chatHistoryButton.id = amountOfChats;
+    chatHistoryButton.textContent = firstMessage;
+    chatHistoryArea.appendChild(chatHistoryButton);
+    
+    amountOfChats++;
 }
