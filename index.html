@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="styles/utils.css">
-        <script src="src/main.js"></script>
-        <title>Chat App</title>
-    </head>
-    <body>
-        <section class = "settings-section">
-            
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/utils.css">
+    <script src="src/main.js"></script>
+    <title>Chat App</title>
+</head>
+<body>
+    <section class="settings-section">
+
+    </section>
+
+    <section class="chat-section">
+        <div class="chat"></div>
+        <div class="prompt">
+            <input type="text" name="prompt" id="prompt" placeholder="Write your question" />
+            <button onClick="sendPrompt()">
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32" id="send"><path d="M1.16998,17.52997l6.57001,4.29004v7.16998c-0.03998,1.28998,1.66003,2.01001,2.56,1.06l3.96002-3.96002l5.53998,3.62c0.25,0.16003,0.53003,0.25,0.82001,0.25c0.62,0,1.20001-0.39996,1.41003-0.97998l9.38995-25.46002c0.07001-0.19995,0.10004-0.40997,0.07001-0.60999c-0.03998-1.03998-1.19-1.69-2.13-1.26001L1.34998,14.91998C0.31,15.37,0.20001,16.94,1.16998,17.52997z M22.82001,8.07001L10.71002,20.17999l-5.66003-3.70001L22.82001,8.07001z" fill="#34a853" class="color000000 svgShape"></path></svg>
+            </button>
+        </div>
+    </section>
+
+    <section class="history-section">
+
+        <section>
+            <button>+ New Chat</button>
         </section>
-        
-        <section class = "chat-section">
-            <div class="chat"></div>
-            <div class="prompt">
-                <input type="text" name="prompt" id="prompt" placeholder = "Write your question"/>
-                <button onClick = "sendPrompt()">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style=" fill:#26e07f;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#1fb141"><path d="M21.5,21.5v129h64.5v-32.25v-64.5v-32.25zM86,53.75c0,17.7805 14.4695,32.25 32.25,32.25c17.7805,0 32.25,-14.4695 32.25,-32.25c0,-17.7805 -14.4695,-32.25 -32.25,-32.25c-17.7805,0 -32.25,14.4695 -32.25,32.25zM118.25,86c-17.7805,0 -32.25,14.4695 -32.25,32.25c0,17.7805 14.4695,32.25 32.25,32.25c17.7805,0 32.25,-14.4695 32.25,-32.25c0,-17.7805 -14.4695,-32.25 -32.25,-32.25z"></path></g></g></svg>
-                </button>
-            </div>
+        <section class="chat-history">
+
         </section>
-        
-        <section class = "history-section">
-            
-            <section>
-                <button>+ New Chat</button>
-            </section>
-            <section class = "chat-history">
-                
-            </section>
-            
-        </section>
-    </body>
+
+    </section>
+</body>
 </html>
