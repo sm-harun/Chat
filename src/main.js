@@ -1,5 +1,6 @@
 let allChats = [[], [], [], [], [], [], [], [], [], [], [], []];
 let amountOfChats = 0;
+let k = 0;
 
 const input = document.getElementById('prompt');
 input.addEventListener('keydown', (event) => {
@@ -12,11 +13,14 @@ function sendPrompt() {
     
     let message = document.createElement('div');
     message.classList.add('message');
+    message.classList.add('right');
     
     message.textContent = input.value;
     chatArea.appendChild(message);
     
     input.value = "";
+    
+    askResponse(message.textContent);
 }
 
 function resetChat(save) {
@@ -26,7 +30,7 @@ function resetChat(save) {
         let firstMessage = messages[0].textContent;
         
         for (let i = 0; i < messages.length; i++) {
-            if (save == true) { allChats[amountOfChats][i] = messages[i].textContent; }
+            if (save == true) { allChats[amountOfChats][i] = messages[i]; }
             messages[i].remove();
         }
         
@@ -58,11 +62,19 @@ function replayChat(chatIndex) {
     const chatArea = document.getElementsByClassName("chat")[0];
     let selectedChat = allChats[chatIndex];
     
-    selectedChat.forEach(messageText => {
-        let message = document.createElement('div');
-        message.classList.add('message');
-        message.textContent = messageText;
+    selectedChat.forEach(message => {
         chatArea.appendChild(message);
-        console.log("Hello world");
     });
+}
+
+function askResponse(message) {
+    
+    let chatArea = document.getElementsByClassName('chat')[0];
+    let response = document.createElement('div');
+    response.classList.add("message");
+    response.classList.add("left");
+    
+    let responseText = returnResponse(message);
+    response.textContent = responseText;
+    chatArea.appendChild(response);
 }

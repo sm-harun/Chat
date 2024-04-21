@@ -71,20 +71,27 @@ body {
 
 .message {
     margin: 3px;
-    margin-left: auto;
     padding: 1rem;
     
     width: auto;
     max-width: 60%;
     height: auto;
-    background-color: var(--clr-green);
     border: 3px solid black;
-    border-radius: 2rem 0 2rem 2rem;
-    
-    display: inline-block;
     
     animation-name: slideUp;
     animation-duration: 1s;
+}
+
+.right {
+    margin-left: auto;
+    background-color: var(--clr-green);
+    border-radius: 2rem 0 2rem 2rem;
+}
+
+.left {
+    margin-right: auto;
+    background-color: var(--clr-darkGreen);
+    border-radius: 0 2rem 2rem 2rem;
 }
 
 .prompt {
