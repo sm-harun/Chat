@@ -20,7 +20,7 @@ function sendPrompt() {
     
     input.value = "";
     
-    askResponse(message.textContent);
+    setTimeout(() => askResponse(message.textContent), 1000)
 }
 
 function resetChat(save) {
