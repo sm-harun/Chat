@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/utils.css">
-    <script src="src/main.js"></script>
     <title>Chat App</title>
+    <link rel="stylesheet" href="styles/utils.css">
+    <script defer src="src/main.js"></script>
 </head>
 <body>
     <section class="settings-section">
-
+        <div class="title">
+            <p>Chat</p>
+        </div>
+        <div class="options">
+            
+        </div>
     </section>
 
     <section class="chat-section">
@@ -24,7 +29,7 @@
     <section class="history-section">
 
         <div>
-            <button onClick="resetChat()">+ New Chat</button>
+            <button onClick="resetChat(true)">+ New Chat</button>
         </div>
         <section class="chat-history"></section>
 
