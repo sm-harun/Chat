@@ -1,0 +1,134 @@
+.settings-section {
+    flex: 1;
+    z-index: 5;
+    
+    height: 100%;
+    background-color: var(--clr-lightGreen);
+    box-shadow: 2px 2px 2px 2px black;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    flex: 2;
+    
+    border-bottom: 3px solid black;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title p {
+    font-size: 2rem;
+    color: var(--clr-orange);
+}
+
+.options {
+    flex: 6;
+    
+    /* background-color: grey; */
+    border-bottom: 3px solid black;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.options button {
+    padding-left: 1rem;
+    
+    width: 100%;
+    height: 3rem;
+    background-color: var(--clr-lightGreen);
+    color: var(--clr-green);
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid black;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: .3s;
+}
+
+.options button:hover {
+    background-color: black;
+}
+
+.options button p {
+    margin-right: auto;
+}
+
+.options button svg {
+    padding: 1rem;
+    margin-left: auto;
+}
+
+#theme-toggler {
+    margin-top: auto;
+    
+    border-top: 2px solid black;
+}
+
+.follow-tab {
+    flex: 2;
+    padding: 3px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.follow-text {
+    flex: 1;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-text p {
+    margin-top: 5px;
+    color: var(--clr-green);
+}
+
+.follow-links {
+    flex: 3;
+    
+    display: flex;
+}
+
+.follow-links a {
+    flex: 1;
+    padding: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    transition: .3s;
+}
+
+.follow-links a:hover {
+    transform: scale(1.1);
+}
+
+.follow-links a svg {
+    padding: 1rem;
+}
+
+.follow-links a p {
+    color: red;
+    text-decoration: underline;
+}
+
+@media (orientation: portrait) {
+    
+.settings-section {
+    flex: 0;
+    width: 0;
+}
+    
+}

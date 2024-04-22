@@ -1,0 +1,83 @@
+.chat-section {
+    flex: 2;
+    position: relative;
+    
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.chat {
+    flex: 10;
+    padding: 1rem;
+    
+    width: 100%;
+    overflow: auto;
+    background-color: var(--clr-orange);
+    border-radius: 0 0 1rem 0;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin: 3px;
+    padding: 1rem;
+    
+    width: auto;
+    max-width: 60%;
+    height: auto;
+    border: 3px solid black;
+    
+    animation-name: slideUp;
+    animation-duration: 1s;
+}
+
+.right {
+    margin-left: auto;
+    background-color: var(--clr-green);
+    border-radius: 2rem 0 2rem 2rem;
+}
+
+.left {
+    margin-right: auto;
+    background-color: var(--clr-darkGreen);
+    border-radius: 0 2rem 2rem 2rem;
+}
+
+.prompt {
+    flex: 1;
+    position: relative;
+    padding: 10px;
+    
+    width: 100%;
+}
+
+.prompt input {
+    padding: 15px;
+    
+    width: 100%;
+    height: 3rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--clr-green);
+}
+
+.prompt button {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    
+    height: 3rem;
+    aspect-ratio: 1;
+    background-color: var(--clr-green);
+    border-radius: 50%;
+    border: none;
+    
+    transform: translateX(-10px);
+}
+
+.prompt button svg {
+    
+}

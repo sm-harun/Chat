@@ -67,6 +67,39 @@ function replayChat(chatIndex) {
     });
 }
 
+function togglePopup(action) {
+    let popup = document.getElementsByClassName('popup')[0];
+    let bodyElements = document.querySelectorAll("body *:not(.popup, .popup *)");
+    
+    if (action == "show") {
+        popup.style.opacity = "1";
+        bodyElements.forEach(element => element.classList.add("hide"));
+        return popup;
+    } else {
+        popup.style.opacity = "0";
+        bodyElements.forEach(element => element.classList.remove("hide"));
+        return null;
+    }
+    
+}
+
+function confirmDeletion() {
+    
+    let popup = togglePopup("show");
+    
+    let yesButton = document.getElementById("yes");
+    let noButton = document.getElementById("no");
+    
+    yesButton.addEventListener("click", function() {
+        resetChat(false);
+        togglePopup("hide");
+    });
+    
+    noButton.addEventListener("click", function() {
+        togglePopup("hide");
+    });
+}
+
 function askResponse(message) {
     
     let chatArea = document.getElementsByClassName('chat')[0];
