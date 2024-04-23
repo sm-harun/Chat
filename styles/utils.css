@@ -11,7 +11,6 @@
 
 body {
     height: 100vh;
-    
     background-color: var(--clr-darkGreen);
     
     display: flex;

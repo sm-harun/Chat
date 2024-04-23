@@ -52,6 +52,28 @@
     background-color: black;
 }
 
+.popup button {
+    margin-bottom: 5px;
+    
+    width: 100%;
+    height: 30%;
+    background-color: var(--clr-orange);
+    border: none;
+    border: 4px solid black;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    
+    transition: color .5s;
+    transition: background-color .5s;
+}
+
+.popup button:hover {
+    color: white;
+    background-color: black;
+    
+    transform: scale(0.9);
+}
+
 .hide {
     opacity: 0.5;
     pointer-events: none;

@@ -1,6 +1,9 @@
 let allChats = [[], [], [], [], [], [], [], [], [], [], [], []];
 let amountOfChats = 0;
-let k = 0;
+
+let popupState = "hidden";
+
+let currentBot = "youSaidBot";
 
 const input = document.getElementById('prompt');
 input.addEventListener('keydown', (event) => {
@@ -67,16 +70,24 @@ function replayChat(chatIndex) {
     });
 }
 
-function togglePopup(action) {
+function togglePopup() {
     let popup = document.getElementsByClassName('popup')[0];
     let bodyElements = document.querySelectorAll("body *:not(.popup, .popup *)");
     
-    if (action == "show") {
+    if (popupState == "hidden") {
+        
         popup.style.opacity = "1";
+        popupState = "visible";
         bodyElements.forEach(element => element.classList.add("hide"));
         return popup;
+        
     } else {
+        
+        let popupElem = document.querySelectorAll(".popup *");
+        popupElem.forEach(element => element.remove());
+        
         popup.style.opacity = "0";
+        popupState = "hidden";
         bodyElements.forEach(element => element.classList.remove("hide"));
         return null;
     }
@@ -85,18 +96,52 @@ function togglePopup(action) {
 
 function confirmDeletion() {
     
-    let popup = togglePopup("show");
+    let popup = togglePopup();
     
-    let yesButton = document.getElementById("yes");
-    let noButton = document.getElementById("no");
+    let warningText = document.createElement("p");
+    let buttonsHolder = document.createElement("div");
+    let yesButton =document.createElement("button");
+    let noButton = document.createElement("button");
+    
+    warningText.textContent = "Are you sure you want to delete? The chat isn't saved.";
+    yesButton.textContent = "YES";
+    noButton.textContent = "No";
+    
+    popup.appendChild(warningText);
+    popup.appendChild(buttonsHolder);
+    buttonsHolder.appendChild(yesButton);
+    buttonsHolder.appendChild(noButton);
     
     yesButton.addEventListener("click", function() {
         resetChat(false);
-        togglePopup("hide");
+        togglePopup();
     });
     
     noButton.addEventListener("click", function() {
-        togglePopup("hide");
+        togglePopup();
+    });
+}
+
+function triggerBotOption() {
+    
+    let popup = togglePopup("show");
+    
+    let youSaidBotButton = document.createElement("button");
+    let numberOfWordsBotButton = document.createElement("button");
+    
+    youSaidBotButton.textContent = "You Said Bot";
+    numberOfWordsBotButton.textContent = "Number Of Words Bot";
+    
+    popup.appendChild(youSaidBotButton);
+    popup.appendChild(numberOfWordsBotButton);
+    
+    youSaidBotButton.addEventListener("click", function() {
+        currentBot = "youSaidBot";
+        togglePopup();
+    });
+    numberOfWordsBotButton.addEventListener("click", function() {
+        currentBot = "numberOfWordsBot";
+        togglePopup();
     });
 }
 
@@ -107,7 +152,7 @@ function askResponse(message) {
     response.classList.add("message");
     response.classList.add("left");
     
-    let responseText = returnResponse(message);
+    let responseText = returnResponse(currentBot, message);
     response.textContent = responseText;
     chatArea.appendChild(response);
 }
