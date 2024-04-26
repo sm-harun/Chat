@@ -10,6 +10,18 @@ input.addEventListener('keydown', (event) => {
    if (event.key == 'Enter') { sendPrompt(); } 
 });
 
+screen.orientation.addEventListener("change", function(e) {
+    let settingsSection = document.getElementsByClassName("settings-section")[0];
+       
+    if (e.srcElement.angle == 90) {
+       settingsSection.style.display = "flex";
+    }
+    if (e.srcElement.angle == 0) {
+       settingsSection.style.position = "absolute";
+       settingsSection.style.width = "50vw";
+    }
+});
+
 function sendPrompt() {
     
     const chatArea = document.getElementsByClassName("chat")[0];
@@ -92,6 +104,18 @@ function togglePopup() {
         return null;
     }
     
+}
+
+function showSettings() {
+    
+    let settingsSection = document.getElementsByClassName("settings-section")[0];
+    
+    if (settingsSection.style.display == "none"){
+        settingsSection.style.display = "inline-block";
+        settingsSection.style.height = "100vh";
+    } else {
+        settingsSection.style.display = "none";
+    }
 }
 
 function confirmDeletion() {
