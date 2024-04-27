@@ -156,6 +156,9 @@ function triggerBotOption() {
     youSaidBotButton.textContent = "You Said Bot";
     numberOfWordsBotButton.textContent = "Number Of Words Bot";
     
+    youSaidBotButton.style.height = "5rem";
+    numberOfWordsBotButton.style.height = "5rem";
+    
     popup.appendChild(youSaidBotButton);
     popup.appendChild(numberOfWordsBotButton);
     
