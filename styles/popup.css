@@ -9,7 +9,7 @@
     padding: 2rem;
     
     width: 50%;
-    height: 50%;
+    height: max-content;
     background-color: var(--clr-green);
     border-radius: 10px;
     opacity: 0;

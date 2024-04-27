@@ -16,6 +16,39 @@ body {
     display: flex;
 }
 
+body * :not(.popup) {
+    opacity: 0;
+    
+    animation-name: appear;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.intro-paragraph {
+    font-size: .5rem;
+    padding: 5px;
+}
+
+#cancel-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    
+    width: 30%;
+    height: 13%;
+    background-color: black;
+    color: white;
+    border: none;
+    opacity: 0.6;
+    
+    transition: .3s;
+}
+
+#cancel-button:hover {
+    transform: scale(1.1);
+}
+
 @keyframes slideUp {
     0% {
         transform: translateY(300px);

@@ -169,6 +169,30 @@ function triggerBotOption() {
     });
 }
 
+function toggleInfo() {
+    
+    let popup = togglePopup();
+    
+    let cancelButton = document.createElement('button');
+    cancelButton.id = "cancel-button";
+    cancelButton.textContent = "Cancel";
+    popup.appendChild(cancelButton);
+    
+    cancelButton.addEventListener("click", function() {
+        togglePopup();
+    });
+    
+    let heading = document.createElement("h2");
+    heading.textContent = "Welcome to the Chat App";
+    popup.appendChild(heading);
+    
+    let paragraph = document.createElement("p");
+    paragraph.textContent = "Today there is no dought that we live in the era of AI. There are a lot of AI's developed each with it's own usecases and cons. This program will bring you the best of every popular one from openAI's ChatGPT to google's Gemini. It makes all of them accessable without any need to create multiple accounts, pay for every software, all in one platform.";
+    paragraph.classList.add("intro-paragraph");
+    popup.appendChild(paragraph);
+    
+}
+
 function askResponse(message) {
     
     let chatArea = document.getElementsByClassName('chat')[0];
