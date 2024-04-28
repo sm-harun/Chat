@@ -1,0 +1,26 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hey", "hi", "hello"],
+      "responses": ["Hello!", "Hi there!", "Hey! How can I assist you?"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "see you", "farewell"],
+      "responses": ["Goodbye!", "See you later!", "Take care!"]
+    },
+    {
+      "tag": "question1",
+      "patterns": ["what is quantum ", "", "quatem", "quantem physics", "ante man shit"],
+      "responses": ["is part of phyioscs that study about the smallest part of the univers and how it work", "it is a sub division of physics that study about the sub atomic parts of the atom"]
+    },
+   {
+   "tag":"moha",
+   "patterns":["bamlak","maha"],
+   "responses":["is a person who loves minecrtazdft"]
+   }
+
+
+  ]
+}
